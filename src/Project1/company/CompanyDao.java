@@ -46,7 +46,7 @@ public class CompanyDao {
 	}
 
 	// 기업 번호로 정보 수정 - 기업이름, 기업분야, 기업전화번호, 기업 이메일, 기업주소
-	public int updateCompany(Company c) {
+	public int updateCompany(Company c, int cnum) {
 		Connection conn = db.conn();
 		int cnt = 0;
 		String sql = "update company set cname=?, field=?, tell=?, email=?, addr=? where cnum=?";
@@ -57,7 +57,7 @@ public class CompanyDao {
 			ps.setString(3, c.getTell());
 			ps.setString(4, c.getEmail());
 			ps.setString(5, c.getAddr());
-			ps.setInt(6, c.getCnum());
+			ps.setInt(6, cnum);
 			cnt = ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -74,13 +74,13 @@ public class CompanyDao {
 	}
 
 	// 기업 정보 삭제
-	public int deleteCompany(Company c) {
+	public int deleteCompany(int cnum) {
 		Connection conn = db.conn();
 		int cnt = 0;
 		String sql = "delete from company where cnum=?";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, c.getCnum());
+			ps.setInt(1, cnum);
 			cnt = ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
