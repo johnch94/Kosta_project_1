@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 //싱글톤
-//db연결해서 사용할 connection 객체를 반환
+//
 //승훈 테스트용 커밋 합닌다.
 //규형 테스트용 
 public class DBConnect {

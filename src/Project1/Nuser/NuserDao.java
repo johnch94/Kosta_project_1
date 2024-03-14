@@ -1,11 +1,10 @@
 package Project1.Nuser;
 
-import JDBC.DBConnect;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import JDBC.DBConnect;
 
 public class NuserDao {
   DBConnect db;
