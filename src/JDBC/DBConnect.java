@@ -1,12 +1,13 @@
-package src.JDBC;
+package JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 //싱글톤
-//db연결해서 사용할 connection 객체를 반환
+//
 //승훈 테스트용 커밋 합닌다.
+//규형 테스트용 
 public class DBConnect {
 	private static DBConnect dbconn = new DBConnect();
 	private String url = "jdbc:oracle:thin:@192.168.0.35:1521/xe"; // localhost 명을 ip 주소로
@@ -25,10 +26,8 @@ public class DBConnect {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
 		return null;
-		
 	}
 	
 	public static DBConnect getInstance() {
