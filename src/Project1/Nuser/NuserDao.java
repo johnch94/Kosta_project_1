@@ -1,11 +1,10 @@
 package Project1.Nuser;
 
-import JDBC.DBConnect;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import JDBC.DBConnect;
 
 public class NuserDao {
   DBConnect db;
@@ -88,27 +87,6 @@ public class NuserDao {
     }
   }
   // 개인정보 검색 (번호로 검색)
-  public Nuser select(int num){
-    Connection conn = db.conn();
-    String sql = "select * from board where num=?";
-    Nuser n = null;
-    try {
-      PreparedStatement prtmt = conn.prepareStatement(sql);
-      prtmt.setInt(1, num);
-      ResultSet rs = prtmt.executeQuery();
-      if(rs.next()) {
-        return new Board(rs.getInt(1), rs.getNString(2), rs.getDate(3),
-            rs.getString(4), rs.getString(5));
-      }
-    } catch (SQLException e) {
-      e.printStackTrace();
-    } finally {
-      try {
-        conn.close();
-      } catch (SQLException e) {
-        e.printStackTrace();
-      }
-    }
-    return b;
-  }
+  
+  
 }
