@@ -1,5 +1,6 @@
 package Project1.Nuser;
 
+// 주석
 public class Nuser {
   private int userid;
   private int unum;
@@ -11,6 +12,7 @@ public class Nuser {
   private String career;
   private String license;
 
+  public Nuser(){}
   @Override
   public String toString() {
     return "Nuser{" +
