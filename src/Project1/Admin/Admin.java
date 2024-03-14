@@ -6,6 +6,7 @@ public class Admin {
   private int userid;
   private int grade;
 
+  public Admin(){}
   public Admin(String logid, String logpw, int userid, int grade) {
     this.logid = logid;
     this.logpw = logpw;

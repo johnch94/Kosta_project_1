@@ -20,7 +20,7 @@ public class NuserDao {
    */
   public void insert(Nuser n){
     Connection conn =db.conn();
-    String sql = "insert into nuser values(0, seq_unum, ?, ?, ?, ?, ?, ?, ?)";
+    String sql = "insert into nuser values(0, seq_unum.nextval, ?, ?, ?, ?, ?, ?, ?)";
     int cnt = 0;
     try {
       PreparedStatement pstmt = conn.prepareStatement(sql);

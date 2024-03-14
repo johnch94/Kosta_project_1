@@ -16,11 +16,13 @@ public class AdminDao {
   // 추가
   public void insert(Admin a){
     Connection conn = db.conn();
-    String sql = "insert into admin values (?, ?, seq_userid, ?)";
+    String sql = "insert into admin values (?, ?, seq_userid.nextval, ?)";
     int cnt = 0;
     try {
       PreparedStatement pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, a.getLogid());
+      pstmt.setString(2, a.getLogpw());
+      pstmt.setInt(3, a.getGrade());
       cnt = pstmt.executeUpdate();
       System.out.println(cnt + " 줄 추가됨.");
     } catch (SQLException e) {
@@ -44,12 +46,6 @@ public class AdminDao {
         conn.close();
       } catch (SQLException e) {
         e.printStackTrace();
-      } finally {
-        try {
-          conn.close();
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
       }
     }
   }
