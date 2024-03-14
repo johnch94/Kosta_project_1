@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 //싱글톤
 //db연결해서 사용할 connection 객체를 반환
+//승훈 테스트용 커밋 합닌다.
 public class DBConnect {
 	private static DBConnect dbconn = new DBConnect();
 	private String url = "jdbc:oracle:thin:@192.168.0.35:1521/xe"; // localhost 명을 ip 주소로
@@ -19,7 +20,7 @@ public class DBConnect {
 			//db에 로그인. 세션 수립하고 생성된 connection 객체 반환
 			return DriverManager.getConnection(url, "hr", "hr");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch 
 			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
