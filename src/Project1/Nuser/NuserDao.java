@@ -97,8 +97,9 @@ public class NuserDao {
       prtmt.setInt(1, num);
       ResultSet rs = prtmt.executeQuery();
       if(rs.next()) {
-        return new Board(rs.getInt(1), rs.getNString(2), rs.getDate(3),
-            rs.getString(4), rs.getString(5));
+        return new Nuser(rs.getInt(1), rs.getInt(2), rs.getString(3),
+            rs.getString(4),rs.getString(5), rs.getString(6),
+            rs.getString(7), rs.getString(8), rs.getString(9));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -109,6 +110,6 @@ public class NuserDao {
         e.printStackTrace();
       }
     }
-    return b;
+    return n;
   }
 }
