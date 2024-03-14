@@ -12,6 +12,20 @@ public class Company {
 
 	public Company() {
 	};
+	
+	
+
+	public Company(String cname, String field, String id, String tell, String email, String addr) {
+		super();
+		this.cname = cname;
+		this.field = field;
+		this.id = id;
+		this.tell = tell;
+		this.email = email;
+		this.addr = addr;
+	}
+
+
 
 	public Company(int userId, int cnum, String cname, String field, String id, String tell, String email,
 			String addr) {
