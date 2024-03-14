@@ -1,4 +1,4 @@
-package src.Project1.Intro;
+package Project1.Intro;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import src.JDBC.DBConnect;
+import JDBC.DBConnect;
 
 public class IntroDao {
 	private DBConnect db;
@@ -23,8 +23,8 @@ public class IntroDao {
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, i.getTitle());
-			pstmt.setString(1, i.getContent());
-			pstmt.setString(1, i.getSubmit());
+			pstmt.setString(2, i.getContent());
+			pstmt.setString(3, i.getSubmit());
 
 			int cnt = pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -49,8 +49,8 @@ public class IntroDao {
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, i.getTitle());
-			pstmt.setString(1, i.getContent());
-			pstmt.setString(1, i.getSubmit());
+			pstmt.setString(2, i.getContent());
+			pstmt.setString(3, i.getSubmit());
 
 			int cnt = pstmt.executeUpdate();
 		} catch (SQLException e) {

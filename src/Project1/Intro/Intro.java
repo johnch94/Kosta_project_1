@@ -1,4 +1,4 @@
-package src.Project1.Intro;
+package Project1.Intro;
 
 public class Intro {
 	private int unum;
