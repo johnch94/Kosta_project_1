@@ -1,4 +1,4 @@
-package Project1.company;
+package Project1.Company;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,16 +20,15 @@ public class CompanyDao {
 	public int insertCompany(Company c) {
 		Connection conn = db.conn();
 		int cnt = 0;
-		String sql = "insert into company values(?,company_seq.nextval,?,?,?,?,?,?)";
+		String sql = "insert into company values(0,company_seq.nextval,?,?,?,?,?,?)";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			// ps.setString(1, admin.getuserId());
-			ps.setString(2, c.getCname());
-			ps.setString(3, c.getField());
-			ps.setString(4, c.getId());
-			ps.setString(5, c.getTell());
-			ps.setString(6, c.getEmail());
-			ps.setString(7, c.getAddr());
+			ps.setString(1, c.getCname());
+			ps.setString(2, c.getField());
+			ps.setString(3, c.getId());
+			ps.setString(4, c.getTell());
+			ps.setString(5, c.getEmail());
+			ps.setString(6, c.getAddr());
 			cnt = ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -97,7 +96,7 @@ public class CompanyDao {
 	}
 
 	// 기업 정보 조회 (분야)
-	public ArrayList<Company> selectCompanyByField(Company c){
+	public ArrayList<Company> selectCompanyByField(Company c) {
 		ArrayList<Company> list = new ArrayList<>();
 		Connection conn = db.conn();
 		String sql = "select * from company where field =?";
@@ -105,14 +104,15 @@ public class CompanyDao {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, c.getField());
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
-				list.add(new Company(rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9)));
+			while (rs.next()) {
+				list.add(new Company(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(6),
+						rs.getString(7), rs.getString(8), rs.getString(9)));
 			}
 			return list;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
 				conn.close();
 			} catch (SQLException e) {
@@ -122,23 +122,24 @@ public class CompanyDao {
 		}
 		return null;
 	}
-	
+
 	// 기업 정보 전체조회
-	public ArrayList<Company> selectAllCompany(Company c){
+	public ArrayList<Company> selectAllCompany(Company c) {
 		ArrayList<Company> list = new ArrayList<>();
 		Connection conn = db.conn();
 		String sql = "select * from company";
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
-				list.add(new Company(rs.getString(3), rs.getString(4), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9)));
+			while (rs.next()) {
+				list.add(new Company(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(6),
+						rs.getString(7), rs.getString(8), rs.getString(9)));
 			}
 			return list;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
 				conn.close();
 			} catch (SQLException e) {
