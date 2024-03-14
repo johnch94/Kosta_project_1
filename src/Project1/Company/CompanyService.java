@@ -73,7 +73,7 @@ public class CompanyService {
 	// 기업 정보 조회 (분야)
 	public void printCompany(Scanner sc){
 		System.out.println("===기엄 정보 조회===");
-		System.out.print("찾을 ")
+		System.out.print("찾을 ");
 		
 	}
 	// 기업 정보 전체조회
