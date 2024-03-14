@@ -1,25 +1,5 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
-<projectDescription>
-	<name>test</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
-</projectDescription>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<projectDescription>
-<name>Kosta_project_1</name>
+<projectDescription>a
 <comment></comment>
 <projects>
 </projects>
@@ -34,4 +14,3 @@
 <nature>org.eclipse.jdt.core.javanature</nature>
 </natures>
 </projectDescription>
->>>>>>> refs/remotes/origin/main
