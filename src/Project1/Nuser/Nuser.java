@@ -1,5 +1,6 @@
 package Project1.Nuser;
 
+// 주석
 public class Nuser {
   private int userid;
   private int unum;
