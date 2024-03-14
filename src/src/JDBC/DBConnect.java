@@ -1,4 +1,4 @@
-package JDBC;
+package src.JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,8 +25,10 @@ public class DBConnect {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		return null;
+		
 	}
 	
 	public static DBConnect getInstance() {
