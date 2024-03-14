@@ -11,6 +11,7 @@ public class Nuser {
   private String career;
   private String license;
 
+  public Nuser(){}
   @Override
   public String toString() {
     return "Nuser{" +
